@@ -3,10 +3,18 @@
 
 ## Project Title
 
+ Banking Management System
 ---
 
 ## Problem Statement (max 150 words)
-
+Banks manage large numbers of customer accounts and financial transactions every day. Manually
+handling operations like account creation, deposits, withdrawals, and balance inquiries can lead to
+errors and inefficiency. A Banking Management System aims to automate these processes by
+providing a secure and organized way to manage customer accounts and transactions. The system
+will allow users to create bank accounts, deposit and withdraw money, check balances, and
+transfer funds between accounts. By using Object-Oriented Programming (OOP) concepts in Java,
+the system will be modular, reusable, and easy to maintain. The project will simulate real banking
+operations while ensuring proper data handling and error management
 ---
 
 ## Target User
