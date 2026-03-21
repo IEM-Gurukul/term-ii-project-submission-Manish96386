@@ -18,11 +18,20 @@ operations while ensuring proper data handling and error management
 ---
 
 ## Target User
-
+• Bank customers
+• Bank employees / administrators
+• Students learning banking operations through simulation
 ---
 
 ## Core Features
 
+-  Create a new bank account
+- Deposit money into an account
+- Withdraw money from an account
+- Check account balance
+- Transfer money between accounts
+- View transaction history
+- Validate account details and handle errors
 - 
 - 
 - 
@@ -33,18 +42,30 @@ operations while ensuring proper data handling and error management
 
 - Abstraction:
 - Inheritance:
-- Polymorphism:
+
 - Exception Handling:
-- Collections / Threads:
+
 
 ---
 
 ## Proposed Architecture Description
-
+The system will follow a layered architecture where different classes handle specific responsibilities.
+The Account class will serve as the base class for different account types like SavingsAccount and
+CurrentAccount. A Customer class will store customer details, while a Bank class will manage
+account operations such as creation and transactions. The Main class will provide a menu-driven
+interface for user interaction. Data structures like HashMap or ArrayList will store account objects.
+This modular design ensures separation of concerns, making the system easier to maintain,
+extend, and tes
 ---
 
 ## How to Run
+-Install Java Development Kit (JDK) on your system.
 
+Open Command Prompt / Terminal.
+
+Navigate to your project folder using:cd path/to/your/project
+ compile the program with javac filenam.java
+ run the file java filename
 ---
 
 ## Git Discipline Notes
