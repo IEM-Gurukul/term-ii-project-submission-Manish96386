@@ -13,8 +13,8 @@ abstract class BankAccount {
     abstract void withdraw(double amount);
 
     void display() {
-        System.out.println("Account No: " + accNo);
-        System.out.println("Name: " + name);
-        System.out.println("Balance: " + balance);
+       IO.println("Account No: " + accNo);
+    IO.println("Name: " + name);
+IO.println("Balance: " + balance);
     }
 }
