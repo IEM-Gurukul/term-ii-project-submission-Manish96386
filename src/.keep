@@ -18,3 +18,13 @@ abstract class BankAccount {
 IO.println("Balance: " + balance);
     }
 }
+class SavingsAccount extends BankAccount {
+    SavingsAccount(String name, int accNo, double balance) {
+        super(name, accNo, balance);
+    }
+
+    void calculateInterest() {
+        double interest = balance * 0.04;
+        System.out.println("Savings Interest: " + interest);
+    }
+}
