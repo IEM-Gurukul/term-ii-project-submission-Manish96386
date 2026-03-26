@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Base Class
+
 abstract class Account {
     protected int accountNumber;
     protected String name;
