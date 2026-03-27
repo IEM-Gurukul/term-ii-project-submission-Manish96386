@@ -87,21 +87,23 @@ class Bank {
     }
 
     public void transfer(int fromAcc, int toAcc, double amount) {
-        Account sender = getAccount(fromAcc);
-        Account receiver = getAccount(toAcc);
+        try {
+            Account sender = getAccount(fromAcc);
+            Account receiver = getAccount(toAcc);
 
-        if (sender.balance < amount) {
-           IO.println("Insufficient Balance for Transfer!");
-            return;
+            if (sender.balance < amount) {
+                throw new RuntimeException("Insufficient Balance for Transfer!");
+            }
+
+            sender.balance -= amount;
+            receiver.balance += amount;
+
+            sender.transactionHistory.add("Transferred " + amount + " to " + toAcc);
+            receiver.transactionHistory.add("Received " + amount + " from " + fromAcc);
+
+            System.out.println("Transfer Successful!");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        sender.balance -= amount;
-        receiver.balance += amount;
-
-        sender.transactionHistory.add("Transferred " + amount + " to " + toAcc);
-        receiver.transactionHistory.add("Received " + amount + " from " + fromAcc);
-
-        System.out.println("Transfer Successful!");
     }
 }
-
