@@ -77,7 +77,7 @@ class Bank {
         Account receiver = getAccount(toAcc);
 
         if (sender.balance < amount) {
-            System.out.println("Insufficient Balance for Transfer!");
+           IO.println("Insufficient Balance for Transfer!");
             return;
         }
 
