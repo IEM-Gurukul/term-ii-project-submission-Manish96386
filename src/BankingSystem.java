@@ -33,3 +33,61 @@ class SavingsAccount extends Account {
     public SavingsAccount(int accNo, String name, double balance) {
         super(accNo, name, balance);
     }
+     @Override
+    public void deposit(double amount) {
+        balance += amount;
+        transactionHistory.add("Deposited: " + amount);
+        System.out.println("Amount Deposited Successfully");
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            System.out.println("Insufficient Balance!");
+        } else {
+            balance -= amount;
+            transactionHistory.add("Withdrawn: " + amount);
+            System.out.println("Amount Withdrawn Successfully");
+        }
+    }
+}
+
+// Bank Class
+class Bank {
+    private Map<Integer, Account> accounts = new HashMap<>();
+    private int accCounter = 1001;
+
+    public void createAccount(String name, double initialBalance) {
+        Account acc = new SavingsAccount(accCounter, name, initialBalance);
+        accounts.put(accCounter, acc);
+        System.out.println("Account Created Successfully!");
+        System.out.println("Your Account Number: " + accCounter);
+        accCounter++;
+    }
+
+    public Account getAccount(int accNo) {
+        if (!accounts.containsKey(accNo)) {
+            throw new RuntimeException("Account not found!");
+        }
+        return accounts.get(accNo);
+    }
+
+    public void transfer(int fromAcc, int toAcc, double amount) {
+        Account sender = getAccount(fromAcc);
+        Account receiver = getAccount(toAcc);
+
+        if (sender.balance < amount) {
+            System.out.println("Insufficient Balance for Transfer!");
+            return;
+        }
+
+        sender.balance -= amount;
+        receiver.balance += amount;
+
+        sender.transactionHistory.add("Transferred " + amount + " to " + toAcc);
+        receiver.transactionHistory.add("Received " + amount + " from " + fromAcc);
+
+        System.out.println("Transfer Successful!");
+    }
+}
+
