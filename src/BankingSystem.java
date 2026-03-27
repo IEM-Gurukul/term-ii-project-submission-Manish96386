@@ -66,7 +66,7 @@ class SavingsAccount extends Account {
 
     
 
-// Bank Class
+
 class Bank {
     private Map<Integer, Account> accounts = new HashMap<>();
     private int accCounter = 1001;
