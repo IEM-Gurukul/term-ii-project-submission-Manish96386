@@ -29,28 +29,42 @@ abstract class Account {
 }
 
 class SavingsAccount extends Account {
-
-    public SavingsAccount(int accNo, String name, double balance) {
+       
+   public SavingsAccount(int accNo, String name, double balance) {
         super(accNo, name, balance);
     }
+
+
      @Override
     public void deposit(double amount) {
-        balance += amount;
-        transactionHistory.add("Deposited: " + amount);
-        System.out.println("Amount Deposited Successfully");
+        try {
+            if (amount <= 0) {
+                throw new RuntimeException("Invalid deposit amount!");
+            }
+            balance += amount;
+            transactionHistory.add("Deposited: " + amount);
+            System.out.println("Amount Deposited Successfully");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void withdraw(double amount) {
-        if (amount > balance) {
-            System.out.println("Insufficient Balance!");
-        } else {
+      public void withdraw(double amount) {
+        try {
+            if (amount > balance) {
+                throw new RuntimeException("Insufficient Balance!");
+            }
             balance -= amount;
             transactionHistory.add("Withdrawn: " + amount);
             System.out.println("Amount Withdrawn Successfully");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
+
+    
 
 // Bank Class
 class Bank {
