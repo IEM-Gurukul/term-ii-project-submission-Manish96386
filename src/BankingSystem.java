@@ -117,7 +117,7 @@ public class BankingSystem {
             System.out.println("\n1.Create Account\n2.Deposit\n3.Withdraw\n4.Check Balance\n5.Transfer\n6.Exit");
             int choice = sc.nextInt();
 
-                        try {
+                        
                 switch (choice) {
                     case 1:
                         System.out.print("Enter Name: ");
