@@ -107,3 +107,12 @@ class Bank {
         }
     }
 }
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Bank bank = new Bank();
+
+        while (true) {
+            System.out.println("\n1.Create Account\n2.Deposit\n3.Withdraw\n4.Check Balance\n5.Transfer\n6.Exit");
+            int choice = sc.nextInt();
