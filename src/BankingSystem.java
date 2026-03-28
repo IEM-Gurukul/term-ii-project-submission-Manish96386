@@ -116,3 +116,37 @@ public class BankingSystem {
         while (true) {
             System.out.println("\n1.Create Account\n2.Deposit\n3.Withdraw\n4.Check Balance\n5.Transfer\n6.Exit");
             int choice = sc.nextInt();
+
+                        try {
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter Name: ");
+                        String name = sc.next();
+                        System.out.print("Enter Initial Balance: ");
+                        double bal = sc.nextDouble();
+                        bank.createAccount(name, bal);
+                        break;
+
+                    case 2:
+                        System.out.print("Enter Account No: ");
+                        int accNo = sc.nextInt();
+                        System.out.print("Enter Amount: ");
+                        double amt = sc.nextDouble();
+                        bank.getAccount(accNo).deposit(amt);
+                        break;
+
+                    case 3:
+                        System.out.print("Enter Account No: ");
+                        accNo = sc.nextInt();
+                        System.out.print("Enter Amount: ");
+                        amt = sc.nextDouble();
+                        bank.getAccount(accNo).withdraw(amt);
+                        break;
+
+                    case 4:
+                        System.out.print("Enter Account No: ");
+                        accNo = sc.nextInt();
+                        bank.getAccount(accNo).checkBalance();
+                        break;
+
+
