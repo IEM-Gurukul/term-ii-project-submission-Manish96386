@@ -54,7 +54,7 @@ CurrentAccount. A Customer class will store customer details, while a Bank class
 account operations such as creation and transactions. The Main class will provide a menu-driven
 interface for user interaction. Data structures like HashMap or ArrayList will store account objects.
 This modular design ensures separation of concerns, making the system easier to maintain,
-extend, and tes
+extend, and test
 ---
 
 ## How to Run
