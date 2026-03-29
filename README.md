@@ -59,9 +59,7 @@ extend, and tes
 
 ## How to Run
 -Install Java Development Kit (JDK) on your system.
-
 Open Command Prompt / Terminal.
-
 Navigate to your project folder using:cd path/to/your/project
  compile the program with javac filenam.java
  run the file java filename
