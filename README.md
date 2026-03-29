@@ -42,7 +42,6 @@ operations while ensuring proper data handling and error management
 
 - Abstraction:
 - Inheritance:
-
 - Exception Handling:
 
 
