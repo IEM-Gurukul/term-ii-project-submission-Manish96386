@@ -117,7 +117,8 @@ public class BankingSystem {
             System.out.println("\n1.Create Account\n2.Deposit\n3.Withdraw\n4.Check Balance\n5.Transfer\n6.Exit");
             int choice = sc.nextInt();
 
-                        
+                            try {
+        
                 switch (choice) {
                     case 1:
                         System.out.print("Enter Name: ");
@@ -148,5 +149,27 @@ public class BankingSystem {
                         accNo = sc.nextInt();
                         bank.getAccount(accNo).checkBalance();
                         break;
+                        case 5:
+                        System.out.print("From Account: ");
+                        int from = sc.nextInt();
+                        System.out.print("To Account: ");
+                        int to = sc.nextInt();
+                        System.out.print("Amount: ");
+                        amt = sc.nextDouble();
+                        bank.transfer(from, to, amt);
+                        break;
 
+                    case 6:
+                        System.exit(0);
+
+                    default:
+                        System.out.println("Invalid Choice");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+}
 
